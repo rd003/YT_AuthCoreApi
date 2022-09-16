@@ -78,6 +78,9 @@ namespace AuthCoreApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(
+                options =>
+                options.WithOrigins("*").AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
 
